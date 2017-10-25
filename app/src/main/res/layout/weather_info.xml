@@ -101,18 +101,19 @@
         android:text="湿度:57%"
         android:textColor="@android:color/white"
         android:textSize="15.0sp" />
-        <!--温度信息-->
+
+        <!-- 温度信息 -->
         <TextView
-        android:id="@+id/temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@id/humidity"
-        android:layout_marginLeft="15.0dip"
-        android:singleLine="true"
-        android:text="温度:20℃"
-        android:textColor="@android:color/white"
-        android:textSize="15.0sp" />
+            android:id="@+id/wendu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/humidity"
+            android:layout_marginLeft="15.0dip"
+            android:singleLine="true"
+            android:text="温度:20℃"
+            android:textColor="@android:color/white"
+            android:textSize="15.0sp" />
 
     <!-- PM2.5整体信息块 -->
     <LinearLayout
