@@ -281,7 +281,7 @@ return todayWeather;
         cityTv.setText(todayWeather.getCity());
         timeTv.setText(todayWeather.getUpdatetime()+ "发布");
         humidityTv.setText("湿度："+todayWeather.getShidu());
-        wenduTv.setText("温度："+todayWeather.getWendu()+"℃");
+        wenduTv.setText("当前温度："+todayWeather.getWendu()+"℃");
         pmDataTv.setText(todayWeather.getPm25());
         pmQualityTv.setText(todayWeather.getQuality());
         weekTv.setText(todayWeather.getDate());
