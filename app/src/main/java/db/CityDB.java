@@ -22,7 +22,7 @@ public class CityDB {
         db = context.openOrCreateDatabase(path, Context.MODE_PRIVATE, null);
     }
 
-    public List<City> getAllCity() {
+    public List<City> getAllCity() {        //将城市信息装入数据库
         List<City> list = new ArrayList<City>();
         Cursor c = db.rawQuery("SELECT * from " + CITY_TABLE_NAME, null);
         while (c.moveToNext()) {

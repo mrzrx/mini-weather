@@ -33,7 +33,7 @@ public class MyApplication extends Application {
         initCityList();
     }
 
-    private void initCityList(){
+    private void initCityList(){        //初始化列表
         mCityList = new ArrayList<City>();
         new Thread(new Runnable() {
             @Override
@@ -61,11 +61,11 @@ public class MyApplication extends Application {
         return mCityList;
     }
 
-    public static MyApplication getInstance() {
+    public MyApplication getInstance() {
         return mApplication;
     }
 
-    private CityDB openCityDB() {
+    private CityDB openCityDB() {        //打开数据库
         String path = "/data"
                 + Environment.getDataDirectory().getAbsolutePath()
                 + File.separator + getPackageName()

@@ -10,13 +10,12 @@ import android.net.NetworkInfo;
 /**
  * Created by zhangqixun on 16/7/4.
  */
-public class NetUtil {
+public class NetUtil {                   //获取当前网络状态
     public static final int NETWORN_NONE = 0;
     public static final int NETWORN_WIFI = 1;
     public static final int NETWORN_MOBILE = 2;
     public static int getNetworkState(Context context) {
-        ConnectivityManager connManager = (ConnectivityManager) context
-                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connManager.getActiveNetworkInfo();
         if (networkInfo == null) {
             return NETWORN_NONE;

@@ -19,7 +19,7 @@ public class TodayWeather {
     private String type;
 
     @Override
-    public String toString() {
+    public String toString() {           //数据显示格式
         return "TodayWeather{" +
                 "city='" + city + '\'' +
                 ", updatetime='" + updatetime + '\'' +
