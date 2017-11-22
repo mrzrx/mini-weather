@@ -13,7 +13,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import db.CityDB;
+import com.example.kk.db.CityDB;
 
 /**
  * Created by kk on 2017/11/1.

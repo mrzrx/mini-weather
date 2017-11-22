@@ -1,4 +1,4 @@
-package db;
+package com.example.kk.db;
 
 import android.content.Context;
 import android.database.Cursor;

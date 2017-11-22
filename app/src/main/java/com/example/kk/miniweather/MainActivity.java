@@ -32,6 +32,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
  */
 public class MainActivity extends Activity implements View.OnClickListener {
     private static final int UPDATE_TODAY_WEATHER = 1;
+    private String updateCityCode="-1" ;
     private ImageView mUpdateBtn;
     private ImageView mCitySelect;
     private TextView cityTv, timeTv, humidityTv,wenduTv, weekTv, pmDataTv, pmQualityTv,
@@ -66,14 +67,33 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         mCitySelect=(ImageView) findViewById(R.id.title_city_manager);     //为选择城市添加单击事件
         mCitySelect.setOnClickListener(this);
+
         initView();         //初始化各项数据为N/A
+
+
+        updateCityCode = getIntent().getStringExtra("citycode");
+        if(updateCityCode!="-1"&& updateCityCode != null)
+        {
+            queryWeatherCode(updateCityCode);
+        }else
+        {
+            SharedPreferences sharedPreferences = getSharedPreferences(
+                    "CityCodePreference",Activity.MODE_PRIVATE);
+            String defaultCityCode = sharedPreferences.getString("citycode","");
+            if(defaultCityCode!=null){
+                Log.d("defaultCityCode",defaultCityCode);
+                queryWeatherCode(defaultCityCode);
+            }
+
+        }
     }
+
     @Override
     public void onClick(View view) {
         if(view.getId()==R.id.title_city_manager){    //选择城市事件
             Intent i=new Intent(this,SelectCity.class);
-            //startActivity(i);
-            startActivityForResult(i,1);     //处理事件同时传递数据
+            startActivity(i);
+            //startActivityForResult(i,1);     //处理事件同时传递数据
 
         }
 
