@@ -17,10 +17,8 @@ import com.example.kk.app.MyApplication;
 import com.example.kk.bean.City;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
+
 
 
 /**
@@ -71,7 +69,7 @@ public class SelectCity extends Activity implements View.OnClickListener {
             String number= mCityList.get(i).getNumber();
             String provinceName = mCityList.get(i).getProvince();
             String cityName = mCityList.get(i).getCity();
-            ls.add("NO."+No_+":"+number+"-"+provinceName+"-"+cityName);
+            ls.add(provinceName+"-"+cityName);
         }
         mList=(ListView)findViewById(R.id.title_list);
         adapter=new ArrayAdapter<String>(SelectCity.this,android.R.layout.simple_list_item_1,ls);   //创建适配器
@@ -91,12 +89,6 @@ public class SelectCity extends Activity implements View.OnClickListener {
                     updateCityCode = mCityList.get(position).getNumber();
                 }
                 Log.d("update city code",updateCityCode);
-
-                //用Shareperference 存储最近一次的citycode
-                SharedPreferences sharedPreferences = getSharedPreferences("CityCodePreference",Activity.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("citycode",updateCityCode);
-                editor.commit();
 
                 intent.putExtra("citycode",updateCityCode);
                 startActivity(intent);
@@ -134,7 +126,7 @@ public class SelectCity extends Activity implements View.OnClickListener {
                         searched = true;
                         selectNo = Integer.toString(i);
                         ls.clear();
-                        ls.add("NO." + No_ + ":" + number + "-" + provinceName + "-" + cityName);
+                        ls.add(provinceName + "-" + cityName);
                         Log.d("changed adapter data", "NO." + No_ + ":" + number + "-" + provinceName + "-" + cityName);
                     }
 
