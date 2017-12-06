@@ -36,15 +36,23 @@
             android:value="Q3KYRutEmhgXIDODn3nOvWFg0Bi0Hfxe" >
         </meta-data>
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".Guide">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN"></action>
+                <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
-        <activity android:name=".SelectCity">
 
+        <activity android:name=".MainActivity">
         </activity>
+
+        <activity android:name=".SelectCity">
+        </activity>
+
+        <activity android:name=".Locate"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

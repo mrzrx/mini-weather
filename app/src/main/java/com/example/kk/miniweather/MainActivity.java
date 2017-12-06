@@ -25,6 +25,8 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import static com.baidu.location.d.j.v;
+
 /**
  * Created by zhangqixun on 16/7/4.
  */
@@ -33,6 +35,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private String updateCityCode="-1" ;
     private ImageView mUpdateBtn;
     private ImageView mCitySelect;
+    private ImageView LocateBtn;
+
     private TextView cityTv, timeTv, humidityTv,wenduTv, weekTv, pmDataTv, pmQualityTv,
             temperatureTv, climateTv, windTv, city_name_Tv;
     private ImageView weatherImg, pmImg;
@@ -60,22 +64,31 @@ public class MainActivity extends Activity implements View.OnClickListener {
         mUpdateBtn.setOnClickListener(this);
         if (NetUtil.getNetworkState(this) != NetUtil.NETWORN_NONE) {       //检查网络状态
             Log.d("myWeather", "网络OK");
-            Toast.makeText(MainActivity.this,"网络OK！", Toast.LENGTH_LONG).show();
-        }else
-        {
+            Toast.makeText(MainActivity.this, "网络OK！", Toast.LENGTH_LONG).show();
+        } else {
             Log.d("myWeather", "网络挂了");
-            Toast.makeText(MainActivity.this,"网络挂了！", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "网络挂了！", Toast.LENGTH_LONG).show();
         }
-        mCitySelect=(ImageView) findViewById(R.id.title_city_manager);     //为选择城市添加单击事件
+        mCitySelect = (ImageView) findViewById(R.id.title_city_manager);     //为选择城市添加单击事件
         mCitySelect.setOnClickListener(this);
+
+        LocateBtn = (ImageView) findViewById(R.id.title_location);
+        LocateBtn.setOnClickListener(this);
 
         initView();         //初始化各项数据为N/A
 
 
         updateCityCode = getIntent().getStringExtra("citycode");
-        if(updateCityCode!="-1"&& updateCityCode != null)
-        {
+        if (updateCityCode != "-1" && updateCityCode != null) {
             queryWeatherCode(updateCityCode);
+        } else {
+            SharedPreferences sharedPreferences = getSharedPreferences(
+                    "CityCodePreference", Activity.MODE_PRIVATE);
+            String defaultCityCode = sharedPreferences.getString("citycode", "");
+            if (defaultCityCode != null) {
+                Log.d("defaultCityCode", defaultCityCode);
+                queryWeatherCode(defaultCityCode);
+            }
         }
     }
 
@@ -88,6 +101,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         }
 
+        if(view.getId()== R.id.title_location) {
+            Log.d("click", "title_city_locate");
+            Intent intent = new Intent(this, Locate.class);
+            startActivity(intent);
+        }
 
         if (view.getId() == R.id.title_update_btn){           //更新按钮事件
             SharedPreferences sharedPreferences = getSharedPreferences("config", MODE_PRIVATE);//读取城市ID
@@ -105,7 +123,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
 
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {       //接收返回的数据
+/*    protected void onActivityResult(int requestCode, int resultCode, Intent data) {       //接收返回的数据
         if (requestCode == 1 && resultCode == RESULT_OK) {
             String newCityCode= data.getStringExtra("cityCode");
             Log.d("myWeather", "选择的城市代码为"+newCityCode);
@@ -118,7 +136,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             }
         }
 
-    }
+    }*/
 
 
 

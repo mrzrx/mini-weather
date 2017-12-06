@@ -90,6 +90,12 @@ public class SelectCity extends Activity implements View.OnClickListener {
                 }
                 Log.d("update city code",updateCityCode);
 
+                //用Shareperference 存储最近一次的citycode
+                SharedPreferences sharedPreferences = getSharedPreferences("CityCodePreference",Activity.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("citycode",updateCityCode);
+                editor.commit();
+
                 intent.putExtra("citycode",updateCityCode);
                 startActivity(intent);
             }
