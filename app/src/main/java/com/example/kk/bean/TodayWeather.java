@@ -171,6 +171,172 @@ public class TodayWeather {
     private String fengli3;
     private String fengxiang3;
 
+    private String date4;
+    private String low4;
+    private String high4;
+    private String type4;
+    private String fengli4;
+    private String fengxiang4;
+
+    private String date5;
+    private String low5;
+    private String high5;
+    private String type5;
+    private String fengli5;
+    private String fengxiang5;
+
+    private String date6;
+    private String low6;
+    private String high6;
+    private String type6;
+    private String fengli6;
+    private String fengxiang6;
+
+    public void setDate4(String date4) {
+        this.date4 = date4;
+    }
+
+    public void setLow4(String low4) {
+        this.low4 = low4;
+    }
+
+    public void setHigh4(String high4) {
+        this.high4 = high4;
+    }
+
+    public void setType4(String type4) {
+        this.type4 = type4;
+    }
+
+    public void setFengli4(String fengli4) {
+        this.fengli4 = fengli4;
+    }
+
+    public void setFengxiang4(String fengxiang4) {
+        this.fengxiang4 = fengxiang4;
+    }
+
+    public void setDate5(String date5) {
+        this.date5 = date5;
+    }
+
+    public void setLow5(String low5) {
+        this.low5 = low5;
+    }
+
+    public void setHigh5(String high5) {
+        this.high5 = high5;
+    }
+
+    public void setType5(String type5) {
+        this.type5 = type5;
+    }
+
+    public void setFengli5(String fengli5) {
+        this.fengli5 = fengli5;
+    }
+
+    public void setFengxiang5(String fengxiang5) {
+        this.fengxiang5 = fengxiang5;
+    }
+
+    public void setDate6(String date6) {
+        this.date6 = date6;
+    }
+
+    public void setLow6(String low6) {
+        this.low6 = low6;
+    }
+
+    public void setHigh6(String high6) {
+        this.high6 = high6;
+    }
+
+    public void setType6(String type6) {
+        this.type6 = type6;
+    }
+
+    public void setFengli6(String fengli6) {
+        this.fengli6 = fengli6;
+    }
+
+    public void setFengxiang6(String fengxiang6) {
+        this.fengxiang6 = fengxiang6;
+    }
+
+    public String getDate4() {
+
+        return date4;
+    }
+
+    public String getLow4() {
+        return low4;
+    }
+
+    public String getHigh4() {
+        return high4;
+    }
+
+    public String getType4() {
+        return type4;
+    }
+
+    public String getFengli4() {
+        return fengli4;
+    }
+
+    public String getFengxiang4() {
+        return fengxiang4;
+    }
+
+    public String getDate5() {
+        return date5;
+    }
+
+    public String getLow5() {
+        return low5;
+    }
+
+    public String getHigh5() {
+        return high5;
+    }
+
+    public String getType5() {
+        return type5;
+    }
+
+    public String getFengli5() {
+        return fengli5;
+    }
+
+    public String getFengxiang5() {
+        return fengxiang5;
+    }
+
+    public String getDate6() {
+        return date6;
+    }
+
+    public String getLow6() {
+        return low6;
+    }
+
+    public String getHigh6() {
+        return high6;
+    }
+
+    public String getType6() {
+        return type6;
+    }
+
+    public String getFengli6() {
+        return fengli6;
+    }
+
+    public String getFengxiang6() {
+        return fengxiang6;
+    }
+
     public void setFengxiang2(String fengxiang2) {
         this.fengxiang2 = fengxiang2;
     }
